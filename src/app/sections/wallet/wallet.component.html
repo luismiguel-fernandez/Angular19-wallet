@@ -23,9 +23,10 @@
       </tr>
     </thead>
     <tbody>
+      @for (coin of getWalletAssets(); track $index) {
       <tr>
         <td scope="col" class="text-end">
-	  <!-- AQUÍ EL LOGO -->
+          <!-- AQUÍ EL LOGO -->
           <img src="" width="50px" height="50px">
         </td>
         <td scope="col">
@@ -46,7 +47,8 @@
         <td scope="col" class="text-end">
           <!-- AQUÍ EL COMPONENTE CON LOS 3 BOTONES -->
         </td>
-    </tr>
+      </tr>
+      }
     </tbody>
   </table>
 </div>

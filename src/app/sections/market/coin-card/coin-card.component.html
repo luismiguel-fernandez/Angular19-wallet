@@ -3,5 +3,6 @@
 	<div class="card-body">
 		<h5 class="card-title">{{coin.name}} ({{coin.symbol}})</h5>
 		<p class="card-text fw-bold">${{coin.price_usd}}</p>
+		<button (click)="addToWallet(coin)" class="btn btn-outline-primary">Add to wallet</button>
 	</div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { WalletService } from '../../../wallet.service';
 
 @Component({
   selector: 'app-coin-card',
@@ -8,4 +9,10 @@ import { Component, Input } from '@angular/core';
 })
 export class CoinCardComponent {
   @Input() coin:any
+
+  constructor(private wallet:WalletService) {}
+
+  addToWallet(coin:any) {
+    this.wallet.addToWallet(coin)
+  }
 }
