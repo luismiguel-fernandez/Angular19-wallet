@@ -10,7 +10,10 @@
   </div>
   
   <div class="row row-cols-md-5">
-    <!-- RELLENAR CON UN LISTADO DE LAS 15 MONEDAS -->
+    <!-- RELLENAR CON UN LISTADO DE LAS 20 MONEDAS -->
+     @for (coin of getCoins(); track $index) {
+      <app-coin-card [coin]="coin"></app-coin-card>
+     }
   </div>
   
   <div class="row">
