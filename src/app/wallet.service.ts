@@ -11,7 +11,10 @@ export class WalletService {
 
   addToWallet(coin:any){
     if (!this.isAlreadyInWallet(coin))
-      this.wallet.push(coin)
+      this.wallet.push( {
+        ...coin,
+        quantity: 0
+      })
     //console.log(this.wallet)
   }
   getWalletAssets() {
