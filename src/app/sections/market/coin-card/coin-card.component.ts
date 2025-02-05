@@ -15,4 +15,8 @@ export class CoinCardComponent {
   addToWallet(coin:any) {
     this.wallet.addToWallet(coin)
   }
+
+  isAlreadyInWallet(coin:any) {
+    return this.wallet.isAlreadyInWallet(coin)
+  }
 }

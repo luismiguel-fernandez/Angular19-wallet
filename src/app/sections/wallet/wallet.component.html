@@ -33,6 +33,7 @@
         </td>
         <td scope="col" class="text-end">
           <!-- AQUÍ EL VALOR TOTAL DE CADA MONEDA -->
+           ${{coin.price_usd * coin.quantity}}
         </td>
         <td scope="col" class="text-end">
           ${{coin.price_usd}}
@@ -46,7 +47,7 @@
         </td>
         <td scope="col" class="text-end">
           <!-- AQUÍ EL COMPONENTE CON LOS 3 BOTONES -->
-           <app-asset-actions></app-asset-actions>
+           <app-asset-actions [coin]="coin"></app-asset-actions>
         </td>
       </tr>
       }

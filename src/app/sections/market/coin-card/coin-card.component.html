@@ -3,6 +3,12 @@
 	<div class="card-body">
 		<h5 class="card-title">{{coin.name}} ({{coin.symbol}})</h5>
 		<p class="card-text fw-bold">${{coin.price_usd}}</p>
+		
+		@if ( !isAlreadyInWallet(coin) ) {
 		<button (click)="addToWallet(coin)" class="btn btn-outline-primary">Add to wallet</button>
+		} @else {
+		<button class="btn btn-outline-danger" disabled>Already in wallet</button>
+		}
+
 	</div>
 </div>
