@@ -16,4 +16,10 @@ export class AssetQuantityComponent {
   saveWallet() {
     this.wallet.saveWallet()
   }
+
+  validateQuant(n:string) {
+    if (isNaN(parseFloat(n)) || parseFloat(n) < 0) {
+      this.coin.quantity = 0
+    }
+  }
 }
