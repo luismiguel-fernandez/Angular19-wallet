@@ -14,7 +14,13 @@ export class MarketDataService {
     return this.http.get(this.urlBase + "tickers/?limit=20")
   }
 
+  getCoinData(id:number) {
+    return this.http.get(this.urlBase + "ticker/?id=" + id)
+  }
+
   getEurDolRate() {
     return this.http.get(this.urlBase + "ticker/?id=111393")
   }
 }
+
+

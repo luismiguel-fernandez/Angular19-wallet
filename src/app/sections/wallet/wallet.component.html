@@ -2,7 +2,7 @@
 
 <figure>
   <blockquote class="blockquote">
-    <h3></h3>
+    <h3>{{getTotalBalance() | currency }}</h3>
   </blockquote>
   <figcaption class="blockquote-footer">
     Total balance
@@ -33,10 +33,10 @@
         </td>
         <td scope="col" class="text-end">
           <!-- AQUÍ EL VALOR TOTAL DE CADA MONEDA -->
-           ${{coin.price_usd * coin.quantity}}
+           {{ coin.price_usd * coin.quantity | currency }}
         </td>
         <td scope="col" class="text-end">
-          ${{coin.price_usd}}
+          {{coin.price_usd | currency }}
         </td>
         <td scope="col" class="text-end">
           <!-- AQUÍ EL COMPONENTE CON EL CAMPO DE TEXTO Y EL BOTÓN -->
@@ -56,5 +56,5 @@
 </div>
 
 <div class="row">
-  <button class="btn btn-primary btn-lg">REFRESH</button>
+  <button (click)="updateWallet()" class="btn btn-primary btn-lg">REFRESH</button>
 </div>
