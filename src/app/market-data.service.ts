@@ -8,7 +8,18 @@ export class MarketDataService {
 
   private urlBase = "https://api.coinlore.net/api/"
 
-  constructor(private http:HttpClient) { }
+  private dolEurRate
+
+  constructor(private http:HttpClient) {
+    this.dolEurRate = JSON.parse(localStorage.getItem("dolEurRate") || "1")
+    this.http.get(this.urlBase + "ticker/?id=111393").subscribe(
+      json => {
+        let coin:any = json
+        this.dolEurRate = coin[0].price_usd
+        localStorage.setItem("dolEurRate", this.dolEurRate)
+      }
+    )
+  }
 
   getMarketData() {
     return this.http.get(this.urlBase + "tickers/?limit=20")
@@ -19,7 +30,7 @@ export class MarketDataService {
   }
 
   getEurDolRate() {
-    return this.http.get(this.urlBase + "ticker/?id=111393")
+    return this.dolEurRate
   }
 }
 

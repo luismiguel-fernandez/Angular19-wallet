@@ -5,7 +5,7 @@
     <h3>{{getTotalBalance() | currency }}</h3>
   </blockquote>
   <figcaption class="blockquote-footer">
-    Total balance
+    {{getTotalBalance() | dollarToEuro | currency:" "}} €
   </figcaption>
 </figure>
 
@@ -44,6 +44,7 @@
         </td>
         <td scope="col" class="text-end">
           <!-- AQUÍ EL VALOR CONVERTIDO A EUROS -->
+           {{coin.price_usd * coin.quantity | dollarToEuro | currency:' ' }} €
         </td>
         <td scope="col" class="text-end">
           <!-- AQUÍ EL COMPONENTE CON LOS 3 BOTONES -->

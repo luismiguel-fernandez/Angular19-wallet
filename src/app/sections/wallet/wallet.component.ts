@@ -4,17 +4,17 @@ import { AssetQuantityComponent } from "./asset-quantity/asset-quantity.componen
 import { AssetActionsComponent } from './asset-actions/asset-actions.component';
 import { MarketDataService } from '../../market-data.service';
 import { CurrencyPipe } from '@angular/common';
+import { DollarToEuroPipe } from '../../dollar-to-euro.pipe';
 
 @Component({
   selector: 'app-wallet',
-  imports: [AssetQuantityComponent, AssetActionsComponent, CurrencyPipe],
+  imports: [AssetQuantityComponent, AssetActionsComponent, CurrencyPipe, DollarToEuroPipe],
   templateUrl: './wallet.component.html',
   styles: ``
 })
 export class WalletComponent {
 
   constructor(private wallet:WalletService, private market:MarketDataService) {}
-
 
   getTotalBalance() {
     let total = 0
@@ -23,7 +23,6 @@ export class WalletComponent {
     })
     return total
   }
-
 
   getWalletAssets() {
     return this.wallet.getWalletAssets()
